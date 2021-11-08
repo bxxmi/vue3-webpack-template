@@ -14,8 +14,6 @@ module.exports = (env, options) => {
     },
     entry: './src/main.js',
     output: {
-      // path: '',
-      // filename: '',
       publicPath: '/',
       clean: true
     },
@@ -36,7 +34,21 @@ module.exports = (env, options) => {
             'vue-style-loader',
             'css-loader',
             'postcss-loader',
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                additionalData: `
+                  @use "sass:color";
+                  @use "sass:list";
+                  @use "sass:map";
+                  @use "sass:math";
+                  @use "sass:meta";
+                  @use "sass:selector";
+                  @use "sass:string";
+                  @import "~/scss/_variables";
+                `
+              }
+            }
           ]
         }
       ]
@@ -52,10 +64,8 @@ module.exports = (env, options) => {
       }),
       new VueLoaderPlugin()
     ],
-    // devServer: {
-    //   port: 8080,
-    //   open: true,
-    //   historyApiFallback: true
-    // }
+    devServer: {
+      historyApiFallback: true
+    }
   }
 }

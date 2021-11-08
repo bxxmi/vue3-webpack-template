@@ -1,13 +1,14 @@
 <template>
-  <h1>{{ message }}</h1>
+  <TheHeader />
+  <RouterView />
 </template>
 
 <script>
+import TheHeader from '~/components/TheHeader'
+
 export default {
-  data() {
-    return {
-      message: 'Hello Vue SFC!'
-    }
+  components: {
+    TheHeader
   }
 }
 </script>
