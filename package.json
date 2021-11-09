@@ -1,7 +1,7 @@
 {
   "name": "fc-kdf-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Webpack + Babel + PostCSS(SCSS) - Vue3 + Vuex + Vue-Router - ESLint",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
@@ -45,5 +45,13 @@
     "vue": "^3.2.20",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KDT1-FE/vue3-webpack-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KDT1-FE/vue3-webpack-template/issues"
+  },
+  "homepage": "https://github.com/KDT1-FE/vue3-webpack-template#readme"
 }
