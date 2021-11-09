@@ -6,6 +6,12 @@
     <RouterLink to="/about">
       About.
     </RouterLink>
+    <RouterLink to="/signup">
+      SignUp
+    </RouterLink>
+    <RouterLink to="/login">
+      LogIn
+    </RouterLink>
   </header>
 </template>
 
