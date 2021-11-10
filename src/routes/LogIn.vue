@@ -8,6 +8,8 @@
   <button @click="logIn">
     로그인
   </button>
+  <!-- <Loader v-if="loading" /> 구문도 가능 -->
+  <Loader :loading="loading" />
 </template>
 
 <script>
@@ -17,12 +19,17 @@ export default {
   data() {
     return {
       id: '',
-      pw: ''
+      pw: '',
+      loading: false 
     }
   },
   methods: {
     async logIn() {
-      const res = await axios({
+      if (this.loading) return
+      this.loading = true
+      // 예외처리
+      try {
+        const res = await axios({
         url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/auth/login',
         method: 'POST',
         headers: {
@@ -37,6 +44,12 @@ export default {
       })
       console.log(res.data.accessToken)
       sessionStorage.setItem('accessToken', res.data.accessToken)
+      this.$router.push('/')
+      } catch (error) {
+        console.log(error.response.data)
+      } finally {
+        this.loading = false 
+      }
     }
   }
 }

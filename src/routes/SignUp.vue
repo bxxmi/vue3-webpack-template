@@ -1,12 +1,12 @@
 <template>
   <input
-    v-model="id"
+    v-model="email"
     type="text" />
   <input
-    v-model="pw"
+    v-model="password"
     type="password" />
   <input
-    v-model="name"
+    v-model="displayName"
     type="text" />
   <button @click="signUp">
     회원가입
@@ -19,9 +19,9 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      id: '',
-      pw: '',
-      name: ''
+      email: '',
+      password: '',
+      displayName: ''
     }
   },
   methods: {
@@ -35,9 +35,9 @@ export default {
           'username': 'KimBoMi'
         },
         data: {
-          email: this.id,
-          password: this.pw,
-          name: this.name
+          email: this.email,
+          password: this.password,
+          displayName: this.displayName
         }
       })
       console.log(res)
