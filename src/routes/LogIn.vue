@@ -30,16 +30,11 @@ export default {
       // 예외처리
       try {
         const res = await axios({
-        url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/auth/login',
+        url: '/.netlify/functions/auth',
         method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'apikey': 'FcKdtJs202110',
-          'username': 'KimBoMi'
-        },
         data: {
-          email: this.id,
-          password: this.pw
+          id: this.id,
+          pw: this.pw
         }
       })
       console.log(res.data.accessToken)

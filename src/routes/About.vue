@@ -57,3 +57,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.input-item {
+  margin-top: 100px;
+}
+</style>
